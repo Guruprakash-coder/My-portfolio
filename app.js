@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCanvas();
   initSkillsFilter();
   initProjectsFilter();
+  initContactForm();
 });
 
 // Initialize Theme (Dark/Light mode)
@@ -203,5 +204,39 @@ function initProjectsFilter() {
     });
   });
 }
+
+// Contact Form Handler
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  
+  if (!form || !status) return;
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Set status to sending
+    status.textContent = 'Sending message...';
+    status.className = 'form-status';
+    
+    const name = document.getElementById('form-name').value;
+    const email = document.getElementById('form-email').value;
+    const message = document.getElementById('form-message').value;
+    
+    // Simulate successful form post
+    setTimeout(() => {
+      status.textContent = `Thank you, ${name}! Your message has been sent successfully.`;
+      status.className = 'form-status success';
+      form.reset();
+      
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        status.textContent = '';
+        status.className = 'form-status';
+      }, 5000);
+    }, 1500);
+  });
+}
+
 
 
