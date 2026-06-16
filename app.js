@@ -1,17 +1,36 @@
 // Main Application Javascript for Guruprakash S Portfolio
 
-document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  initThemeToggle();
-  initTypewriter();
-  initCanvas();
-  initSkillsFilter();
-  initProjectsFilter();
-  initContactForm();
-  initScrollReveal();
-  initActiveNavScroll();
-  initMobileMenu();
-});
+function init() {
+  console.log("Initializing portfolio scripts...");
+  
+  const steps = [
+    { name: "Theme", fn: initTheme },
+    { name: "ThemeToggle", fn: initThemeToggle },
+    { name: "Typewriter", fn: initTypewriter },
+    { name: "Canvas", fn: initCanvas },
+    { name: "SkillsFilter", fn: initSkillsFilter },
+    { name: "ProjectsFilter", fn: initProjectsFilter },
+    { name: "ContactForm", fn: initContactForm },
+    { name: "ScrollReveal", fn: initScrollReveal },
+    { name: "ActiveNavScroll", fn: initActiveNavScroll },
+    { name: "MobileMenu", fn: initMobileMenu }
+  ];
+  
+  steps.forEach(step => {
+    try {
+      step.fn();
+      console.log(`[Success] ${step.name} initialized.`);
+    } catch (err) {
+      console.error(`[Error] Failed to initialize ${step.name}:`, err);
+    }
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 
 // Initialize Theme (Dark/Light mode)
 function initTheme() {
@@ -146,19 +165,22 @@ function initSkillsFilter() {
   const tabs = document.querySelectorAll('.skill-tab');
   const groups = document.querySelectorAll('.skill-card-group');
   
+  console.log(`[SkillsFilter] Found ${tabs.length} tabs and ${groups.length} groups.`);
+  
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener('click', (e) => {
+      const category = tab.getAttribute('data-tab');
+      console.log(`[SkillsFilter] Tab clicked: ${category}`, e);
+      
       // Remove active from all tabs
       tabs.forEach(t => t.classList.remove('active'));
       // Add active to clicked tab
       tab.classList.add('active');
       
-      const category = tab.getAttribute('data-tab');
-      
       groups.forEach(group => {
-        if (category === 'all' || group.getAttribute('data-category') === category) {
+        const groupCat = group.getAttribute('data-category');
+        if (category === 'all' || groupCat === category) {
           group.style.display = 'block';
-          // Trigger slight fade-in trigger animation
           setTimeout(() => {
             group.style.opacity = '1';
             group.style.transform = 'translateY(0)';
@@ -180,13 +202,16 @@ function initProjectsFilter() {
   const filters = document.querySelectorAll('.project-filter');
   const cards = document.querySelectorAll('.project-card');
   
+  console.log(`[ProjectsFilter] Found ${filters.length} filters and ${cards.length} cards.`);
+  
   filters.forEach(filter => {
-    filter.addEventListener('click', () => {
+    filter.addEventListener('click', (e) => {
+      const filterValue = filter.getAttribute('data-filter');
+      console.log(`[ProjectsFilter] Filter clicked: ${filterValue}`, e);
+      
       // Remove active class
       filters.forEach(f => f.classList.remove('active'));
       filter.classList.add('active');
-      
-      const filterValue = filter.getAttribute('data-filter');
       
       cards.forEach(card => {
         const category = card.getAttribute('data-category');
