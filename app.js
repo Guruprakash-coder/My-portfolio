@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initCanvas();
   initSkillsFilter();
+  initProjectsFilter();
 });
 
 // Initialize Theme (Dark/Light mode)
@@ -168,4 +169,39 @@ function initSkillsFilter() {
     });
   });
 }
+
+// Projects Section Filter
+function initProjectsFilter() {
+  const filters = document.querySelectorAll('.project-filter');
+  const cards = document.querySelectorAll('.project-card');
+  
+  filters.forEach(filter => {
+    filter.addEventListener('click', () => {
+      // Remove active class
+      filters.forEach(f => f.classList.remove('active'));
+      filter.classList.add('active');
+      
+      const filterValue = filter.getAttribute('data-filter');
+      
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px) scale(0.95)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
 
