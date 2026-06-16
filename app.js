@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initTypewriter();
   initCanvas();
+  initSkillsFilter();
 });
 
 // Initialize Theme (Dark/Light mode)
@@ -133,3 +134,38 @@ function initCanvas() {
   
   animate();
 }
+
+// Skills Section Filter
+function initSkillsFilter() {
+  const tabs = document.querySelectorAll('.skill-tab');
+  const groups = document.querySelectorAll('.skill-card-group');
+  
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs
+      tabs.forEach(t => t.classList.remove('active'));
+      // Add active to clicked tab
+      tab.classList.add('active');
+      
+      const category = tab.getAttribute('data-tab');
+      
+      groups.forEach(group => {
+        if (category === 'all' || group.getAttribute('data-category') === category) {
+          group.style.display = 'block';
+          // Trigger slight fade-in trigger animation
+          setTimeout(() => {
+            group.style.opacity = '1';
+            group.style.transform = 'translateY(0)';
+          }, 50);
+        } else {
+          group.style.opacity = '0';
+          group.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            group.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
