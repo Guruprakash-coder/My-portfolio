@@ -2,11 +2,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initThemeToggle();
   initTypewriter();
   initCanvas();
   initSkillsFilter();
   initProjectsFilter();
   initContactForm();
+  initScrollReveal();
+  initActiveNavScroll();
+  initMobileMenu();
 });
 
 // Initialize Theme (Dark/Light mode)
@@ -237,6 +241,97 @@ function initContactForm() {
     }, 1500);
   });
 }
+
+// Theme Toggle Functionality
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+  
+  toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+// Scroll Reveal Animations
+function initScrollReveal() {
+  const revealItems = document.querySelectorAll('.reveal-item');
+  
+  const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target); // Stop observing once revealed
+      }
+    });
+  };
+  
+  const revealObserver = new IntersectionObserver(revealCallback, {
+    root: null,
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  revealItems.forEach(item => {
+    revealObserver.observe(item);
+  });
+}
+
+// Active Nav Link Highlighting on Scroll
+function initActiveNavScroll() {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  const activeCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  };
+  
+  const activeObserver = new IntersectionObserver(activeCallback, {
+    root: null,
+    threshold: 0.5,
+    rootMargin: '0px'
+  });
+  
+  sections.forEach(section => {
+    activeObserver.observe(section);
+  });
+}
+
+// Mobile Menu Handler
+function initMobileMenu() {
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  if (!mobileToggle || !navMenu) return;
+  
+  mobileToggle.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+  
+  // Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+}
+
 
 
 
