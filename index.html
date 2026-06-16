@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guruprakash S | Aspiring Software & AI Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Guruprakash S, an Aspiring Software and AI Engineer with a strong foundation in full-stack engineering, microservices, and machine learning.">
+  <meta name="keywords" content="Guruprakash S, Software Engineer, AI Engineer, Full Stack Developer, Portfolio, Spring Boot, React, Microservices, Machine Learning">
+  <meta name="author" content="Guruprakash S">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Global Canvas for Constellation Background -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">
+        <span class="logo-text">Guru</span><span class="logo-dot">.</span>
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Theme Toggle Switch -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge reveal-item">Available for Opportunities</span>
+        <h1 class="hero-title reveal-item">
+          Hi, I am <span class="accent-text">Guruprakash S</span>
+        </h1>
+        <h2 class="hero-subtitle reveal-item">
+          I am a <span id="typewriter" class="typewriter"></span><span class="cursor">|</span>
+        </h2>
+        <p class="hero-desc reveal-item">
+          A passionate Computer Science student focusing on scalable microservice architectures, full-stack systems, and machine learning models to build high-performance solutions.
+        </p>
+        <div class="hero-cta reveal-item">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-scroll reveal-item">
+        <a href="#about" class="scroll-down">
+          <span>Scroll Down</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="section-title reveal-item">About Me</h2>
+      <div class="about-grid">
+        <div class="about-details reveal-item">
+          <h3>Software & AI Engineering Student</h3>
+          <p>
+            I am a Computer Science undergraduate at Annamalai University with a strong passion for solving real-world challenges through full-stack web and mobile development, microservices, and AI/ML models.
+          </p>
+          <p>
+            My approach focuses on writing modular, readable, and highly maintainable code. I love exploring new technologies and setting up containerized environments with Docker to deploy robust, production-ready systems.
+          </p>
+          <div class="education-card">
+            <div class="education-header">
+              <span class="edu-degree">B.E. Computer Science</span>
+              <span class="edu-year">2023 - 2027</span>
+            </div>
+            <div class="education-body">
+              <p class="edu-inst">Annamalai University</p>
+              <div class="edu-metrics">
+                <div class="metric-item">
+                  <span class="metric-val">8.30</span>
+                  <span class="metric-lbl">CGPA</span>
+                </div>
+              </div>
+              <p class="edu-coursework"><strong>Relevant Coursework:</strong> Full Stack Development, Data Structures, Operating Systems, Database Management Systems, Core Java.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats-container reveal-item">
+          <div class="stat-card">
+            <div class="stat-num">200+</div>
+            <div class="stat-label">Coding Problems Solved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4+</div>
+            <div class="stat-label">Complete Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">8.3</div>
+            <div class="stat-label">Current CGPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <h2 class="section-title reveal-item">My Expertise</h2>
+      <div class="skills-tabs reveal-item">
+        <button class="skill-tab active" data-tab="all">All Skills</button>
+        <button class="skill-tab" data-tab="languages">Languages</button>
+        <button class="skill-tab" data-tab="web-mobile">Web & Mobile</button>
+        <button class="skill-tab" data-tab="ai-ml">AI & ML</button>
+        <button class="skill-tab" data-tab="tools-databases">Tools & Databases</button>
+      </div>
+      <div class="skills-grid reveal-item" id="skills-container">
+        <!-- Skill Card 1: Languages -->
+        <div class="skill-card-group" data-category="languages">
+          <h3 class="skill-group-title">Languages</h3>
+          <div class="skill-badges">
+            <div class="skill-badge"><span>Python</span></div>
+            <div class="skill-badge"><span>Java</span></div>
+            <div class="skill-badge"><span>JavaScript</span></div>
+            <div class="skill-badge"><span>TypeScript</span></div>
+            <div class="skill-badge"><span>Dart</span></div>
+            <div class="skill-badge"><span>C++</span></div>
+          </div>
+        </div>
+        <!-- Skill Card 2: AI & ML -->
+        <div class="skill-card-group" data-category="ai-ml">
+          <h3 class="skill-group-title">AI & Machine Learning</h3>
+          <div class="skill-badges">
+            <div class="skill-badge"><span>Scikit-learn</span></div>
+            <div class="skill-badge"><span>Pandas</span></div>
+            <div class="skill-badge"><span>NumPy</span></div>
+            <div class="skill-badge"><span>Prompt Engineering</span></div>
+          </div>
+        </div>
+        <!-- Skill Card 3: Web & Mobile -->
+        <div class="skill-card-group" data-category="web-mobile">
+          <h3 class="skill-group-title">Web & Mobile Development</h3>
+          <div class="skill-badges">
+            <div class="skill-badge"><span>HTML & CSS</span></div>
+            <div class="skill-badge"><span>React.js</span></div>
+            <div class="skill-badge"><span>Node.js</span></div>
+            <div class="skill-badge"><span>Express.js</span></div>
+            <div class="skill-badge"><span>Spring Boot</span></div>
+            <div class="skill-badge"><span>MERN Stack</span></div>
+            <div class="skill-badge"><span>Flutter</span></div>
+          </div>
+        </div>
+        <!-- Skill Card 4: Databases & Tools -->
+        <div class="skill-card-group" data-category="tools-databases">
+          <h3 class="skill-group-title">Databases & Infrastructure</h3>
+          <div class="skill-badges">
+            <div class="skill-badge"><span>MongoDB</span></div>
+            <div class="skill-badge"><span>MySQL</span></div>
+            <div class="skill-badge"><span>SQL</span></div>
+            <div class="skill-badge"><span>Microservices</span></div>
+            <div class="skill-badge"><span>Docker</span></div>
+            <div class="skill-badge"><span>Git & GitHub</span></div>
+            <div class="skill-badge"><span>RESTful APIs</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <h2 class="section-title reveal-item">Featured Work</h2>
+      <div class="project-filters reveal-item">
+        <button class="project-filter active" data-filter="all">All Projects</button>
+        <button class="project-filter" data-filter="ai-micro">AI & Microservices</button>
+        <button class="project-filter" data-filter="web">Web Apps</button>
+        <button class="project-filter" data-filter="mobile">Mobile Apps</button>
+      </div>
+      <div class="projects-grid" id="projects-container">
+        <!-- Project 1 -->
+        <div class="project-card reveal-item" data-category="ai-micro">
+          <div class="project-icon-wrapper">
+            <svg class="project-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Career Assistant</h3>
+            <p class="project-text">A microservice-based career platform using Java, Spring Boot, and Python ML service. It processes candidate data to deliver automated, highly tailored career insights and matches.</p>
+            <ul class="project-highlights">
+              <li>Architected microservices using Java/Spring Boot for user profiles</li>
+              <li>Integrated Python machine learning service for insights generation</li>
+              <li>Containerized deployment via Docker and Docker Compose</li>
+            </ul>
+            <div class="project-tags">
+              <span>Spring Boot</span>
+              <span>Python</span>
+              <span>Docker</span>
+              <span>Microservices</span>
+            </div>
+            <div class="project-links">
+              <!-- No github link listed explicitly for AI Career Assistant but we can point to their profile -->
+              <a href="https://github.com/Guruprakash-coder" target="_blank" rel="noopener" class="project-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal-item" data-category="web">
+          <div class="project-icon-wrapper">
+            <svg class="project-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01"/></svg>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">GsCars - Accessories Platform</h3>
+            <p class="project-text">A full-stack e-commerce solution for automobile accessories, engineered with high responsiveness, email OTP security, and seamless checkout operations.</p>
+            <ul class="project-highlights">
+              <li>Vite & Tailwind CSS responsive frontend user interfaces</li>
+              <li>Secure user authentication via RESTful APIs and email OTP verification</li>
+              <li>Frontend deployed on Vercel, backend deployed on Render</li>
+            </ul>
+            <div class="project-tags">
+              <span>MERN Stack</span>
+              <span>Tailwind CSS</span>
+              <span>Vite</span>
+              <span>OTP Auth</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Guruprakash-coder" target="_blank" rel="noopener" class="project-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                GitHub
+              </a>
+              <a href="https://gs-cars-six.vercel.app/" target="_blank" rel="noopener" class="project-link live">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14L21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal-item" data-category="web">
+          <div class="project-icon-wrapper">
+            <svg class="project-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Lead Dashboard</h3>
+            <p class="project-text">A secure, full-stack lead management dashboard featuring real-time data handling, responsive grid interfaces, and secure user permissions management.</p>
+            <ul class="project-highlights">
+              <li>Responsive user interface built using React, TypeScript, and CSS</li>
+              <li>Secure backend infrastructure to manage logins & protect lead databases</li>
+              <li>Smooth sorting, filtering, and analysis tools for customer analytics</li>
+            </ul>
+            <div class="project-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Guruprakash-coder" target="_blank" rel="noopener" class="project-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card reveal-item" data-category="mobile">
+          <div class="project-icon-wrapper">
+            <svg class="project-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Fitness Tracking Application</h3>
+            <p class="project-text">A cross-platform mobile tracker built to assist users in managing daily diet, hydration, steps, and fitness targets with responsive data syncing.</p>
+            <ul class="project-highlights">
+              <li>Cross-platform UI engineered with Flutter and Dart</li>
+              <li>Integrated Node.js backend to register users and store records</li>
+              <li>Quick summary dashboards and interactive calorie charts</li>
+            </ul>
+            <div class="project-tags">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Guruprakash-coder" target="_blank" rel="noopener" class="project-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="achievements-section" id="achievements">
+    <div class="container">
+      <h2 class="section-title reveal-item">Achievements</h2>
+      <div class="achievements-card reveal-item">
+        <div class="achievement-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34M12 2a4 4 0 0 0-4 4v7a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z"/></svg>
+        </div>
+        <div class="achievement-info">
+          <h3>Algorithm Mastery</h3>
+          <p class="achievement-desc">Successfully solved over <strong>200+ algorithm and data structure problems</strong> across major competitive programming and coding platforms, showcasing strong analytical and logical reasoning skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal-item">Get In Touch</h2>
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info reveal-item">
+          <h3>Let's collaborate!</h3>
+          <p class="contact-intro">I'm currently looking for internships and entry-level developer roles. Drop a line if you want to connect!</p>
+          
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="info-text">
+                <span class="info-label">Email</span>
+                <a href="mailto:guruprakash6999@gmail.com" class="info-val">guruprakash6999@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="info-text">
+                <span class="info-label">Phone</span>
+                <a href="tel:+919345533527" class="info-val">+91 93455 33527</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="info-text">
+                <span class="info-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/guruprakash-s-465078333" target="_blank" rel="noopener" class="info-val">guruprakash-s-465078333</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form UI -->
+        <div class="contact-form-card reveal-item">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" rows="5" placeholder="Let's build something together!" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="copyright">&copy; 2026 Guruprakash S. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Guruprakash-coder" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/guruprakash-s-465078333" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="mailto:guruprakash6999@gmail.com" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

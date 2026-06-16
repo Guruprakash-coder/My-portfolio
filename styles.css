@@ -1,0 +1,139 @@
+/* Import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* CSS VARIABLES FOR THEME SYSTEM */
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Accent Colors (Consistent across modes for branding) */
+  --color-accent-blue: hsl(195, 100%, 45%);
+  --color-accent-purple: hsl(270, 95%, 65%);
+  --color-accent-blue-rgb: 0, 180, 230;
+  --color-accent-purple-rgb: 157, 51, 255;
+  --color-accent-gradient: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-purple) 100%);
+  --color-accent-hover-gradient: linear-gradient(135deg, hsl(195, 100%, 50%) 0%, hsl(270, 95%, 70%) 100%);
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-full: 9999px;
+  
+  --container-width: 1200px;
+  --header-height: 80px;
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: hsl(220, 25%, 8%);
+  --color-bg-secondary: hsl(220, 25%, 12%);
+  --color-bg-tertiary: hsl(220, 25%, 16%);
+  
+  --color-text-primary: hsl(220, 20%, 94%);
+  --color-text-secondary: hsl(220, 15%, 70%);
+  --color-text-muted: hsl(220, 10%, 50%);
+  
+  --color-glass-bg: rgba(15, 23, 42, 0.65);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-shadow: rgba(0, 0, 0, 0.4);
+  
+  --color-card-bg: hsl(220, 25%, 12%);
+  --color-card-hover-bg: hsl(220, 25%, 15%);
+  --color-card-border: rgba(255, 255, 255, 0.06);
+  --color-glow: rgba(0, 180, 230, 0.15);
+}
+
+[data-theme="light"] {
+  --color-bg-primary: hsl(220, 20%, 97%);
+  --color-bg-secondary: hsl(220, 20%, 93%);
+  --color-bg-tertiary: hsl(220, 20%, 88%);
+  
+  --color-text-primary: hsl(220, 30%, 15%);
+  --color-text-secondary: hsl(220, 20%, 40%);
+  --color-text-muted: hsl(220, 15%, 55%);
+  
+  --color-glass-bg: rgba(245, 247, 250, 0.75);
+  --color-glass-border: rgba(0, 0, 0, 0.08);
+  --color-glass-shadow: rgba(31, 41, 55, 0.06);
+  
+  --color-card-bg: hsl(0, 0%, 100%);
+  --color-card-hover-bg: hsl(220, 20%, 95%);
+  --color-card-border: rgba(0, 0, 0, 0.06);
+  --color-glow: rgba(157, 51, 255, 0.08);
+}
+
+/* RESET & BASE STYLES */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* SECTION COMMON STYLES */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--color-accent-gradient);
+  margin: 12px auto 0;
+  border-radius: var(--border-radius-full);
+}
