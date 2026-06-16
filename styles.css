@@ -911,6 +911,19 @@ section {
   line-height: 1.6;
 }
 
+.achievement-link-text {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+  margin-top: 12px;
+  transition: color var(--transition-fast);
+}
+
+.achievements-card:hover .achievement-link-text {
+  color: var(--color-accent-purple);
+}
+
 /* CONTACT SECTION */
 .contact-grid {
   display: grid;
