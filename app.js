@@ -248,22 +248,43 @@ function initContactForm() {
     status.textContent = 'Sending message...';
     status.className = 'form-status';
     
-    const name = document.getElementById('form-name').value;
-    const email = document.getElementById('form-email').value;
-    const message = document.getElementById('form-message').value;
+    const data = new FormData(form);
     
-    // Simulate successful form post
-    setTimeout(() => {
-      status.textContent = `Thank you, ${name}! Your message has been sent successfully.`;
-      status.className = 'form-status success';
-      form.reset();
-      
-      // Clear message after 5 seconds
+    fetch('https://formspree.io/f/xeeygbog', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        status.textContent = 'Thank you! Your message has been sent successfully.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (data && data.errors) {
+            status.textContent = data.errors.map(error => error.message).join(', ');
+          } else {
+            status.textContent = 'Oops! There was a problem submitting your form.';
+          }
+          status.className = 'form-status error';
+        });
+      }
+    })
+    .catch(error => {
+      status.textContent = 'Oops! There was a problem submitting your form.';
+      status.className = 'form-status error';
+      console.error('Contact form submission error:', error);
+    })
+    .finally(() => {
+      // Clear status message after 5 seconds
       setTimeout(() => {
         status.textContent = '';
         status.className = 'form-status';
       }, 5000);
-    }, 1500);
+    });
   });
 }
 
